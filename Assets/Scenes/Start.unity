@@ -1090,7 +1090,7 @@ GameObject:
   m_Component:
   - component: {fileID: 198164985}
   m_Layer: 5
-  m_Name: Select
+  m_Name: Level Select
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1297,7 +1297,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u7B2C\u4E00\u5173"
+  m_text: 'Level1
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1ac0ac45275a8ac42b1c23c219887143, type: 2}
   m_sharedMaterial: {fileID: -4041209770309600252, guid: 1ac0ac45275a8ac42b1c23c219887143,
@@ -1385,7 +1387,7 @@ GameObject:
   m_Component:
   - component: {fileID: 311674609}
   m_Layer: 5
-  m_Name: Course
+  m_Name: Introduction to game
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3803,7 +3805,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: FirstScene
+          m_StringArgument: Scenes1
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &1385650009
@@ -3864,7 +3866,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u73A9\u6CD5\u4ECB\u7ECD"
+  m_text: 'Introduction
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1ac0ac45275a8ac42b1c23c219887143, type: 2}
   m_sharedMaterial: {fileID: -4041209770309600252, guid: 1ac0ac45275a8ac42b1c23c219887143,
@@ -4537,7 +4541,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: SecondScene
+          m_StringArgument: Scenes2
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &1673778126
@@ -5092,7 +5096,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u79FB\u52A8"
+  m_text: 'Move
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1ac0ac45275a8ac42b1c23c219887143, type: 2}
   m_sharedMaterial: {fileID: -4041209770309600252, guid: 1ac0ac45275a8ac42b1c23c219887143,
