@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class WindmillController : MonoBehaviour
 {
+    //控制风车旋转的脚本
     [SerializeField]
     private bool IsUpRotate = false;
     [SerializeField]

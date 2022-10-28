@@ -2,12 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
+//À¿Õˆ≤Àµ•Ω≈±æ
 public class DeahMenu : MonoBehaviour
 {
-    //À¿Õˆ≤Àµ•Ω≈±æ
+
     [SerializeField]
     private GameObject _deahMenu;
+    [SerializeField]
+    private GameObject _gameOver;
     [SerializeField]
     private AudioClip _deathClip;
 
@@ -17,11 +20,20 @@ public class DeahMenu : MonoBehaviour
         _deahMenu.SetActive(true);
         AudioManager.instance.AudioPlay(_deathClip);
     }
+    public void ShowGameOverMenu() {
+        Time.timeScale = 0;
+        _gameOver.SetActive(true);
+        AudioManager.instance.AudioPlay(_deathClip);
+    }
     public void Reborn() {
         //Ω‚≥˝‘›Õ£
         Time.timeScale = 1.0f;
-        GameObject.Find("PokemonBall").GetComponent<PlayerMoveController>().RebornBall();
+        GameObject.Find("PokemonBall").GetComponent<BallTriggerController>().RebornBall();
         _deahMenu.SetActive(false);
+    }
+    public void EnterScene(string name){
+        Time.timeScale = 1.0f;
+        SceneManager.LoadScene(name);
     }
     public void ExitGame() {
         #if UNITY_EDITOR

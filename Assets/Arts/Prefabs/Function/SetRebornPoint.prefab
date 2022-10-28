@@ -1920,7 +1920,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u91CD\u751F\u70B9"
+  m_text: "\u5B58\u6863\u70B9"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1ac0ac45275a8ac42b1c23c219887143, type: 2}
   m_sharedMaterial: {fileID: -4041209770309600252, guid: 1ac0ac45275a8ac42b1c23c219887143,

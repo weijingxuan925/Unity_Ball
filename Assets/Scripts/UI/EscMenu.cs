@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EscMenu : MonoBehaviour
 {
@@ -9,13 +10,21 @@ public class EscMenu : MonoBehaviour
     [SerializeField]
     private GameObject _escMenu;
 
+    public void ReTry(string name) {
+        SceneManager.LoadScene(name);
+        Time.timeScale = 1.0f;
+    }
     public void Continue() {
         //½â³ýÔÝÍ£
         Time.timeScale = 1.0f;
         _escMenu.SetActive(false);
     }
-    public void Save() { 
-    
+    public void Save(string name) {
+        PlayerPrefs.SetString("Scenename",name);
+    }
+    public void EnterScene(string name) {
+        Time.timeScale = 1.0f;
+        SceneManager.LoadScene(name);
     }
     public void ExitGame() {
         #if UNITY_EDITOR

@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//更新重生点的脚本
 public class SetRebornPoint : MonoBehaviour
 {
-    //更新重生点的脚本
+    
     private void OnTriggerEnter(Collider other)
     {
-        other.GetComponent<PlayerMoveController>().SetRebornPoint(other.transform.position);
+        other.GetComponent<BallTriggerController>().SetRebornPoint(other.transform.position);
     }
 }
