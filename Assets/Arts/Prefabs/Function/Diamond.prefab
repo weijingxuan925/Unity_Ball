@@ -111,5 +111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef69d2130237b3246a190f3b4786c645, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 10
+  _speed: 20
   _collectClip: {fileID: 8300000, guid: b7ba295d9742d674a90ca83c22955f41, type: 3}
+  _diamondEffect: {fileID: 8872630693804278367, guid: 3a6d5aa8522787842b9463380fbf3402,
+    type: 3}

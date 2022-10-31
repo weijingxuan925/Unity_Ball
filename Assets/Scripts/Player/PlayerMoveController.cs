@@ -7,7 +7,7 @@ using UnityEngine.ProBuilder.Shapes;
 //玩家移动脚本
 public class PlayerMoveController : MonoBehaviour
 {
-    
+
     [SerializeField]
     private float _moveForce = 50.0f;
     [SerializeField]
@@ -32,8 +32,13 @@ public class PlayerMoveController : MonoBehaviour
     {
         //按着空格不继续给移动力
         brake = Input.GetKey(KeyCode.Space);
-        //获取移动向量
-        _direction = new Vector3(Input.GetAxis("Horizontal"),0,Input.GetAxis("Vertical"));
+        
+        _direction = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+
+       
+        float y = Camera.main.transform.rotation.eulerAngles.y;
+        _direction = Quaternion.Euler(0, y, 0) * _direction;
+
         //球的自身扭力
         spin = 0;
         if (Input.GetKey(KeyCode.Q)) {

@@ -25,21 +25,21 @@ public class LiftController : MonoBehaviour
     {
         //判断两个对象是否掉下
         if (Box1 != null) {
-            if (Box1.transform.position.y < 5.0f) {
+            if (Box1.transform.position.y < 45f) {
                 _box1IsFall = true;
                 Destroy(Box1.gameObject);
             }
         }
         if (Box2 != null) {
-            if (Box2.transform.position.y < 5.0f) {
+            if (Box2.transform.position.y < 45f) {
                 _box2IsFall = true;
                 Destroy(Box2.gameObject);
             }
         }
         //如果都掉下了，平台上升
         if (_box1IsFall && _box2IsFall) {
-            if (transform.position.y < targetTransform.position.y) {
-                transform.position += Vector3.up * Speed * Time.deltaTime;
+            if (transform.position.y > targetTransform.position.y) {
+                transform.position -= Vector3.up * Speed * Time.deltaTime;
             }
         }
     }

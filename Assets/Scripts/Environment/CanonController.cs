@@ -8,35 +8,26 @@ public class CanonController : MonoBehaviour
     private float _speed = 3.0f;
     [SerializeField]
     private float _force = 50.0f;
-    //存放玩家位置
-    [SerializeField]
-    private Transform _canonBall;
+    
     //炮管位置
     [SerializeField]
     private Transform _muzzle;
     //发射点
     [SerializeField]
     private Transform _lunchPoint;
+    //摄像机
+    [SerializeField]
+    private Transform _mainCamera;
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "Player"){
-            //关闭碰撞盒
-            this.GetComponent<BoxCollider>().enabled = false;
-            _canonBall = other.transform;
-            //关闭玩家的移动脚本
-            _canonBall.GetComponent<PlayerMoveController>().enabled = false;
-            _canonBall.gameObject.SetActive(false);
-            //使小球速度置零
-            _canonBall.GetComponent<Rigidbody>().velocity = Vector3.zero;
-            _canonBall.position = other.transform.position;
-        }
-    }
+    //玩家
+    private Transform _canonBall;
+    //记录大炮初始位置
+    private Transform _muzzlePoint;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        _muzzlePoint = _muzzle;
     }
 
     // Update is called once per frame
@@ -49,7 +40,33 @@ public class CanonController : MonoBehaviour
                 _canonBall.gameObject.SetActive(true);
                 _canonBall.GetComponent<Rigidbody>().AddForce(_force * Vector3.forward,ForceMode.Impulse);
                 _canonBall.GetComponent<PlayerMoveController>().enabled = true;
+                //恢复相机跟随
+                _mainCamera.GetComponent<CameraController>().Target = _canonBall;
+
+                //恢复大炮
+                _canonBall = null;
+                _muzzle = _muzzlePoint;
+                this.GetComponent<BoxCollider>().enabled = true;
             }
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            //关闭碰撞盒
+            this.GetComponent<BoxCollider>().enabled = false;
+            _canonBall = other.transform;
+            //关闭玩家的移动脚本
+            _canonBall.GetComponent<PlayerMoveController>().enabled = false;
+            _canonBall.gameObject.SetActive(false);
+            //使小球速度置零
+            _canonBall.GetComponent<Rigidbody>().velocity = Vector3.zero;
+            _canonBall.position = other.transform.position;
+            //改变相机跟随
+            _mainCamera.GetComponent<CameraController>().Target = _muzzle;
+            
         }
     }
 }

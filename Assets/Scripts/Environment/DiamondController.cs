@@ -10,6 +10,9 @@ public class DiamondController : MonoBehaviour
     //收集音效
     [SerializeField]
     private AudioClip _collectClip;
+    //收集特效
+    [SerializeField]
+    private ParticleSystem _diamondEffect;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +28,9 @@ public class DiamondController : MonoBehaviour
     {
         if (other.tag == "Player") {
             GameObject.Find("PokemonBall").GetComponent<PlayerAttributeManager>().SetScore(100);
+            //生成特效
+            Instantiate(_diamondEffect,transform.position,Quaternion.identity);
+            //播放音效
             AudioManager.instance.AudioPlay(_collectClip);
             Destroy(this.gameObject);
         }
