@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-//À¿Õˆ≤Àµ•Ω≈±æ
+
+// Death menu
 public class DeahMenu : MonoBehaviour
 {
 
@@ -15,7 +16,7 @@ public class DeahMenu : MonoBehaviour
     private AudioClip _deathClip;
 
     public void ShowDeahMenu() {
-        //‘›Õ£”Œœ∑
+        // Stop the game
         Time.timeScale = 0;
         _deahMenu.SetActive(true);
         AudioManager.instance.AudioPlay(_deathClip);
@@ -26,7 +27,7 @@ public class DeahMenu : MonoBehaviour
         AudioManager.instance.AudioPlay(_deathClip);
     }
     public void Reborn() {
-        //Ω‚≥˝‘›Õ£
+        // restart
         Time.timeScale = 1.0f;
         GameObject.Find("PokemonBall").GetComponent<BallTriggerController>().RebornBall();
         _deahMenu.SetActive(false);

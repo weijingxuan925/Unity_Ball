@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class EscMenu : MonoBehaviour
 {
-    //ÔÝÍ£²Ëµ¥½Å±¾
+    // Esc menu
     [SerializeField]
     private GameObject _escMenu;
 
@@ -15,7 +15,7 @@ public class EscMenu : MonoBehaviour
         Time.timeScale = 1.0f;
     }
     public void Continue() {
-        //½â³ýÔÝÍ£
+        // continue run
         Time.timeScale = 1.0f;
         _escMenu.SetActive(false);
     }

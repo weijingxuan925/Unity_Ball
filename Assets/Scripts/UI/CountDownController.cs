@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-//µ¹¼ÆÊ±½Å±¾
+// To get the remaining of time
 public class CountDownController : MonoBehaviour
 {
     [SerializeField]
@@ -19,6 +19,7 @@ public class CountDownController : MonoBehaviour
             _totalTime--;
         }
     }
+
     // Start is called before the first frame update
     void Start()
     {
