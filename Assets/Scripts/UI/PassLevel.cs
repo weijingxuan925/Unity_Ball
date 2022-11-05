@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class PassLevel : MonoBehaviour
 {
-    // get user informatio
+    //获取玩家属性显示的UI，通过后关闭
     [SerializeField]
     private GameObject _ui;
     [SerializeField]

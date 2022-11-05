@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-// To get the remaining of time
+//µ¹¼ÆÊ±½Å±¾
 public class CountDownController : MonoBehaviour
 {
     [SerializeField]
@@ -11,6 +11,8 @@ public class CountDownController : MonoBehaviour
 
     [SerializeField]
     private float _totalTime = 300.0f;
+
+    bool _isDeath = false;
     IEnumerator CountDown()
     {
         while(_totalTime >= 0){
@@ -19,10 +21,16 @@ public class CountDownController : MonoBehaviour
             _totalTime--;
         }
     }
-
     // Start is called before the first frame update
     void Start()
     {
         StartCoroutine(CountDown());
+    }
+    private void Update()
+    {
+        if (_totalTime < 0 && !_isDeath) {
+            GameObject.Find("Util").GetComponent<DeahMenu>().ShowGameOverMenu();
+            _isDeath = true;
+        }
     }
 }

@@ -17,7 +17,10 @@ public class CanonController : MonoBehaviour
     private Transform _lunchPoint;
     //摄像机
     [SerializeField]
-    private Transform _mainCamera;
+    private GameObject _mainCamera;
+    //开炮音效
+    [SerializeField]
+    private AudioClip _audioClip;
 
     //玩家
     private Transform _canonBall;
@@ -42,11 +45,14 @@ public class CanonController : MonoBehaviour
                 _canonBall.GetComponent<PlayerMoveController>().enabled = true;
                 //恢复相机跟随
                 _mainCamera.GetComponent<CameraController>().Target = _canonBall;
-
+                _mainCamera.GetComponent<CameraController>().enabled = false;
+                _mainCamera.GetComponent<Camera2>().enabled = true;
                 //恢复大炮
                 _canonBall = null;
                 _muzzle = _muzzlePoint;
                 this.GetComponent<BoxCollider>().enabled = true;
+                //播放开炮音效
+                AudioManager.instance.AudioPlay(_audioClip);
             }
         }
     }
@@ -65,6 +71,8 @@ public class CanonController : MonoBehaviour
             _canonBall.GetComponent<Rigidbody>().velocity = Vector3.zero;
             _canonBall.position = other.transform.position;
             //改变相机跟随
+            _mainCamera.GetComponent<CameraController>().enabled = true;
+            _mainCamera.GetComponent<Camera2>().enabled = false;
             _mainCamera.GetComponent<CameraController>().Target = _muzzle;
             
         }

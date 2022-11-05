@@ -12,14 +12,12 @@ public class MainMenuController : MonoBehaviour
     public GameObject _select;
     public GameObject _course;
     public GameObject _collect;
-    public GameObject _title;
-    
+
     public GameObject[] _nullSticker;
     public GameObject[] _sticker;
-
     public void GetExit() {
         #if UNITY_EDITOR
-            EditorApplication.isPlaying = false;
+            EditorApplication.isPlaying = false;//用于退出运行
         #else
             Application.Quit();
         #endif

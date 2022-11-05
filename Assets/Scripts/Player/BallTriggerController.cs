@@ -56,6 +56,16 @@ public class BallTriggerController : MonoBehaviour
         _rb = GetComponent<Rigidbody>();
         _rebornPoint = res;
     }
+    //小球撞到箱子爆炸
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Boxes") {
+            foreach (Transform child in collision.transform.parent) {
+                child.GetComponent<Rigidbody>().AddExplosionForce(100, collision.contacts[0].point,5,3);
+            }
+        
+        }
+    }
     //小球重生的方法
     public void RebornBall()
     {
@@ -77,7 +87,7 @@ public class BallTriggerController : MonoBehaviour
     void Update()
     {
         //小球重生设置
-        if (_rb.position.y < 5.0f && !_isDeath)
+        if (_rb.position.y < 10.0f && !_isDeath)
         {
             int hp = int.Parse(_hpText.text.Split(":")[1]);
             hp--;
@@ -93,7 +103,7 @@ public class BallTriggerController : MonoBehaviour
             _hpText.text = "Hp:" + hp.ToString();
             _isDeath = true;
         }
-        else if (_rb.position.y >= 5.0f)
+        else if (_rb.position.y >= 10.0f)
         {
             _isDeath = false;
         }

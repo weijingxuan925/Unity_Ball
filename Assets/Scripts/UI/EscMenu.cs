@@ -6,16 +6,17 @@ using UnityEngine.SceneManagement;
 
 public class EscMenu : MonoBehaviour
 {
-    // Esc menu
+    //ÔÝÍ£²Ëµ¥½Å±¾
     [SerializeField]
     private GameObject _escMenu;
 
+    private bool _isShow = false;
     public void ReTry(string name) {
         SceneManager.LoadScene(name);
         Time.timeScale = 1.0f;
     }
     public void Continue() {
-        // continue run
+        //½â³ýÔÝÍ£
         Time.timeScale = 1.0f;
         _escMenu.SetActive(false);
     }
@@ -37,8 +38,18 @@ public class EscMenu : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape)) {
-            Time.timeScale = 0;
-            _escMenu.SetActive(true);
+            if (!_isShow)
+            {
+                Time.timeScale = 0;
+                _escMenu.SetActive(true);
+                _isShow = true;
+            }
+            else { 
+                Time.timeScale = 1.0f;
+                _escMenu.SetActive(false);
+                _isShow = false;
+            }
+            
         }
     }
 }

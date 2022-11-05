@@ -12,7 +12,8 @@ public class TimeController : MonoBehaviour
     //时间乘数，用来加速时间
     [SerializeField]
     private float timeMultiplier;
-
+    //这里这样可以做到即封装，同时也在Inspector中访问
+    //表示UI中的富文本框，用来显示24小时制的时间
     [SerializeField]
     private TextMeshProUGUI timeText;
 
@@ -50,7 +51,9 @@ public class TimeController : MonoBehaviour
         UpdateTimeOfDay();
         RotateSunLight();
     }
-   
+    /// <summary>
+    /// 更新文本的方法
+    /// </summary>
     private void UpdateTimeOfDay()
     {
         //这里加速时间
@@ -61,9 +64,9 @@ public class TimeController : MonoBehaviour
             timeText.text = "Time:" + currentTime.ToString("HH:mm");
         }
     }
-
-    // 旋转定向关
-
+    /// <summary>
+    /// 旋转定向关
+    /// </summary>
     private void RotateSunLight()
     {
         float sunLightRotation;
@@ -76,9 +79,27 @@ public class TimeController : MonoBehaviour
             //算出当前时间差和总时间的比率
             double percentage = timeSinceSunrise.TotalMinutes / sunriseToSunsetDuration.TotalMinutes;
 
-    
+            //Mathf.Lerp参数(a,b,t)
+            //在 a 与 b 之间按 t 进行线性插值。
+            //参数 t 限制在范围[0, 1] 内。
             sunLightRotation = Mathf.Lerp(0, 180, (float)percentage);
 
+            //如果灯光可用则获取StreetLampLight标签的游戏对象
+            /*if (streetLampLightEnabled)
+            {
+                GameObject[] streetLamps = GameObject.FindGameObjectsWithTag("StreetLampLight");
+                //遍历数组
+                foreach (GameObject streetLamp in streetLamps)
+                {
+                    //获取符合条件的游戏对象的光源组件
+                    Light streetLampLight = streetLamp.GetComponent<Light>();
+                    if (streetLampLight != null)
+                    {
+                        //白天关灯
+                        streetLampLight.enabled = false;
+                    }
+                }
+            }*/
         }
         else
         {
@@ -91,16 +112,30 @@ public class TimeController : MonoBehaviour
 
             sunLightRotation = Mathf.Lerp(180, 360, (float)percentage);
 
-   
+            //控制灯光
+            /*if (streetLampLightEnabled)
+            {
+                GameObject[] streetLamps = GameObject.FindGameObjectsWithTag("StreetLampLight");
+                foreach (GameObject streetLamp in streetLamps)
+                {
+                    Light streetLampLight = streetLamp.GetComponent<Light>();
+                    if (streetLampLight != null)
+                    {
+                        streetLampLight.enabled = true;
+                    }
+                }
+            }*/
         }
         //将定向光围绕轴旋转角度---参数是四元数(角度,轴)
         sunLight.transform.rotation = Quaternion.AngleAxis(sunLightRotation, Vector3.right);
 
     }
-
+    /// <summary>
+    /// 自定义计算时间差的方法
+    /// </summary>
     /// <param name="fromTime"></param>
     /// <param name="toTime"></param>
-
+    /// <returns></returns>
     private TimeSpan CalculateTimeDifference(TimeSpan fromTime, TimeSpan toTime)
     {
         TimeSpan diff = toTime - fromTime;
