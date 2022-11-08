@@ -908,7 +908,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-1686
+  m_Name: pb_Mesh-393454
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1919,6 +1919,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SetRebornPoint
+      objectReference: {fileID: 0}
+    - target: {fileID: 5332642499152006936, guid: 5a1b2cddb922d994c9bcbd67d0004e7b,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 5332642499152006951, guid: 5a1b2cddb922d994c9bcbd67d0004e7b,
+        type: 3}
+      propertyPath: m_text
+      value: Save
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a1b2cddb922d994c9bcbd67d0004e7b, type: 3}
@@ -3149,7 +3159,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-1264
+  m_Name: pb_Mesh-392220
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -24854,6 +24864,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SetRebornPoint (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5332642499152006936, guid: 5a1b2cddb922d994c9bcbd67d0004e7b,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 5332642499152006951, guid: 5a1b2cddb922d994c9bcbd67d0004e7b,
+        type: 3}
+      propertyPath: m_text
+      value: Save
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a1b2cddb922d994c9bcbd67d0004e7b, type: 3}

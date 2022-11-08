@@ -30,7 +30,7 @@
 ## How to build the project
 > 1. Open the project with Unity
 > 2. Click the build button
-> 3. Choose the platform you want to build
+> 3. Choose the platform you 1want to build
 > 4. Click the build button
 > 5. The build will be in the folder you choose
 >
