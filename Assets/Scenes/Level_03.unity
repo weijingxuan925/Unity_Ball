@@ -14019,6 +14019,28 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
       value: Level_03
       objectReference: {fileID: 0}
+    - target: {fileID: 6852459253806866050, guid: f59a22c264d080743a10e18075dce221,
+        type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a,
+        type: 2}
+    - target: {fileID: 6852459253806866050, guid: f59a22c264d080743a10e18075dce221,
+        type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6852459253945495066, guid: f59a22c264d080743a10e18075dce221,
+        type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a,
+        type: 2}
+    - target: {fileID: 6852459253945495066, guid: f59a22c264d080743a10e18075dce221,
+        type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6852459254204492601, guid: f59a22c264d080743a10e18075dce221,
         type: 3}
       propertyPath: _deathClip
@@ -14144,6 +14166,27 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
       value: Level_03
       objectReference: {fileID: 0}
+    - target: {fileID: 8945672607429745952, guid: f59a22c264d080743a10e18075dce221,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 110
+      objectReference: {fileID: 0}
+    - target: {fileID: 8945672607429745952, guid: f59a22c264d080743a10e18075dce221,
+        type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a,
+        type: 2}
+    - target: {fileID: 8945672607429745952, guid: f59a22c264d080743a10e18075dce221,
+        type: 3}
+      propertyPath: m_fontSizeBase
+      value: 110
+      objectReference: {fileID: 0}
+    - target: {fileID: 8945672607429745952, guid: f59a22c264d080743a10e18075dce221,
+        type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8945672608403282657, guid: f59a22c264d080743a10e18075dce221,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
@@ -14153,6 +14196,17 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
       value: Level_03
+      objectReference: {fileID: 0}
+    - target: {fileID: 8972766921542630538, guid: f59a22c264d080743a10e18075dce221,
+        type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a,
+        type: 2}
+    - target: {fileID: 8972766921542630538, guid: f59a22c264d080743a10e18075dce221,
+        type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f59a22c264d080743a10e18075dce221, type: 3}
